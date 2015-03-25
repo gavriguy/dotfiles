@@ -39,7 +39,6 @@ Plugin 'rking/ag.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'groenewege/vim-less'
-Plugin 'groenewege/vim-less'
 
 Plugin 'facebook/vim-flow' "watch flowType on js files with flow
 " All of your Plugins must be added before the following line
