@@ -63,6 +63,8 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
+" witch between the last two files
+nnoremap <leader><leader> <c-^>
 " use vim arrows
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
