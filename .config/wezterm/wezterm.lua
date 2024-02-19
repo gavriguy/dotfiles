@@ -14,7 +14,7 @@ config.color_scheme = 'AdventureTime'
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
-config.font_size = 16
+config.font_size = 14
 
 
 config.keys = {
