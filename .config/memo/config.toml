@@ -1,0 +1,10 @@
+memodir = "/Users/gabrielguy/.config/memo/_posts"
+memotemplate = ""
+editor = "code --wait"
+column = 20
+selectcmd = "peco"
+grepcmd = "/Applications/Visual/ Studio/ Code.app/Contents/Resources/app/node_modules/vscode-ripgrep/bin/rg -n --no-heading -S ${PATTERN} ${FILES}"
+assetsdir = ""
+pluginsdir = "/Users/gabrielguy/.config/memo/plugins"
+templatedirfile = ""
+templatebodyfile = ""

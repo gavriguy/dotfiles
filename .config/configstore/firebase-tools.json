@@ -1,0 +1,69 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1662883674953
+	},
+	"activeProjects": {
+		"/Users/gabrielguy/repos/playground/json-feed-generator2": "json-feed-generator",
+		"/Users/gabrielguy/repos/playground/server-dsps": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/server-dsps2/firebase-projects/tvone": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/rush-playground/firebase-projects/gavri-test": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/rush2/firebase-projects/gavri-test": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/zapp-serverless/firebase-projects/test-project": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/zapp-serverless2/firebase-projects/test-project": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/zapp-serverless2/firebase-projects": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/applicaster/gold-customers/customers/tv-one/backend/deployment": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/applicaster/gold-customers/customers/tv-one": "server-dsps-ab67",
+		"/Users/gabrielguy/repos/playground/fb-ts": "server-dsps-67hklo",
+		"/Users/gabrielguy/repos/playground/gold-lerna/gold-customers/customers/youtube-demo/nest-app/disto": "dsp-playground-e068b",
+		"/Users/gabrielguy/repos/playground/firebase-lerna": "dsp-playground-e068b",
+		"/Users/gabrielguy/repos/playground/firebase-lerna1": "dsp-playground-e068b",
+		"/Users/gabrielguy/repos/cloud-run": "cloud-run-playground-313713"
+	},
+	"webconfig": {
+		"server-dsps-ab67": {
+			"projectId": "server-dsps-ab67",
+			"databaseURL": "https://server-dsps-ab67.firebaseio.com",
+			"storageBucket": "server-dsps-ab67.appspot.com",
+			"apiKey": "AIzaSyAuTYwBDmHt-mSOJ77m_2z88tsuIPrRmZs",
+			"authDomain": "server-dsps-ab67.firebaseapp.com",
+			"messagingSenderId": "120691075478"
+		}
+	},
+	"analytics-uuid": "ba306034-ff12-4bc7-bd71-292a6c1cafeb",
+	"usage": false,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "117965718582361916650",
+		"hd": "applicaster.com",
+		"email": "g.guy@applicaster.com",
+		"email_verified": true,
+		"at_hash": "cvXY1NiWKXDTNOPs4gxtwA",
+		"iat": 1657106522,
+		"exp": 1657110122
+	},
+	"tokens": {
+		"expires_at": 1662887471738,
+		"refresh_token": "1//030RXl4BVQ-UzCgYIARAAGAMSNwF-L9Irdh1fMQhq8RAJUk2UmFGFSKWVN43P8kWPqjPiZX3Pfw1_Smh33Ca09w1YO4tzIRpRZ5M",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0AVA9y1vg66jEIvOION7pJjBZhDItqqzVVkgRWYEiYXdH-LDlUjKV48jQ8hs1dbWwq5XrSfEOPWYz5ElB8a78M0bC1g5qTt6jSb3dQOHZ1JH3iNhjz8DCP2BAy7eNUBldZzj_3U6hPpmuYKOfV1sWgDxHiJa45E-D8mwWP3UaCgYKATASARISFQE65dr8uvXoOO-Tewr0OR-G_9vngQ0174",
+		"expires_in": 3599,
+		"scope": "https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloud-platform openid https://www.googleapis.com/auth/userinfo.email",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNhYWJmNjkwODE5MTYxNmE5MDhhMTM4OTIyMGE5NzViM2MwZmJjYTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE3OTY1NzE4NTgyMzYxOTE2NjUwIiwiaGQiOiJhcHBsaWNhc3Rlci5jb20iLCJlbWFpbCI6ImcuZ3V5QGFwcGxpY2FzdGVyLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiSVBaM2YtSFFYTko5YlNVT2tNclVLdyIsImlhdCI6MTY2Mjg4Mzg3MiwiZXhwIjoxNjYyODg3NDcyfQ.rzAif88sKF4qSige8iTmDFqvofAxeTfuycun1GCcptUCbeAakH0yXxTg0-SZEouMmst1bOB2K_HXtrlMHOCKzaroj-_m2omaRWpelV8vBRahH5LHq8HfNHf517bCwNNDxJ4DAh9-IyqqIM0hSFPIP_vOsW-Q2wdL_oubVVtODjI1e0BlwNE_vtaWSJNGhYG42KuRMPoyeQoNR5DDeKksR5OjIO6N-AnB4Wspb-22WhHnwoPi7QSvPcYL-ntLT7MzRflprAOyMYkT0_bOAziuffAQXgjmd3V0oYxrPXtCNS-2I1in3JWAoOs02GIRAmK90o2-B8dunrhONPFxdiAGCg"
+	}
+}
