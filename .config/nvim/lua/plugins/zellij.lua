@@ -1,0 +1,3 @@
+return {
+  "Lilja/zellij.nvim",
+}
