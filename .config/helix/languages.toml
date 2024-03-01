@@ -1,0 +1,18 @@
+
+[[language]]
+name = "tsx"
+formatter = { command = 'prettier', args = ["--parser", "typescript", "--tab-width", "2"] }
+auto-format = true
+
+[[language]]
+name = "mylang"
+scope = "source.mylang"
+file-types = ["txt"]
+roots = ["pnpm-lock.yaml"]
+language-servers = [ "mylang-lsp" ]
+
+[language-server.mylang-lsp]
+command = "pnpm"
+args = ["-C","/Users/gabrielguy/repos/playground/lsp-playground","start"]
+config = { provideFormatter = true }
+
