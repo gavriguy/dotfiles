@@ -1,0 +1,10 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["markdown", "rmd", "md"],
+        "path": "./snippets/markdown.json"
+      }
+    ]
+  }
+}

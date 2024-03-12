@@ -1,3 +1,5 @@
+# hyepr - s - h : yabai --start-service
+
 # focus window
 hyper - h : yabai -m window --focus west
 hyper - j : yabai -m window --focus south

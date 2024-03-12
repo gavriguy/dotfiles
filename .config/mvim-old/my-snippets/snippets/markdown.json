@@ -1,0 +1,7 @@
+{
+  "todo": {
+    "prefix": "todo",
+    "body": ["<!--TODO: ${0} -->"],
+    "description": "Add Markdown TODO"
+  }
+}
