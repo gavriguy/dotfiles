@@ -100,17 +100,17 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = 'Monokai Pro (Gogh)'
 
 config.tab_bar_at_bottom = true
 -- config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.85
 
 config.window_padding = {
 	left = "20px",
 	right = "20px",
-	top = "30px",
+	top = "20px",
 	bottom = "20px",
 }
 
@@ -125,7 +125,7 @@ config.window_padding = {
 -- 	border_top_color = "purple",
 -- }
 
-config.font_size = 15
+config.font_size = 16
 
 -- wezterm.on("user-var-changed", function(window, pane, name, value)
 -- 	local overrides = window:get_config_overrides() or {}
