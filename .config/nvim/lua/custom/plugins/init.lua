@@ -28,4 +28,5 @@ return {
       vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
     end,
   },
+  { 'xiyaowong/transparent.nvim' },
 }
