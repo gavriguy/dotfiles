@@ -62,14 +62,47 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Caps Lock -> Hyper Key",
+        description: "Right Command -> Hyper Key",
         from: {
-          key_code: "caps_lock",
+          key_code: "right_command",
         },
         to: [
           {
             key_code: "left_shift",
             modifiers: ["left_command", "left_control", "left_option"],
+          },
+        ],
+        type: "basic",
+      },
+      //      {
+      //        type: "basic",
+      //        description: "Disable CMD + Tab to force Hyper Key usage",
+      //        from: {
+      //          key_code: "tab",
+      //          modifiers: {
+      //            mandatory: ["left_command"],
+      //          },
+      //        },
+      //        to: [
+      //          {
+      //            key_code: "tab",
+      //          },
+      //        ],
+      //      },
+    ],
+  },
+  {
+    description: "Caps Lock settings",
+    manipulators: [
+      {
+        description: "Caps Lock -> Ctrl",
+        from: {
+          key_code: "caps_lock",
+        },
+        to: [
+          {
+            key_code: "left_control",
+            // modifiers: ["left_command", "left_control", "left_option"],
           },
         ],
         to_if_alone: [
@@ -116,10 +149,14 @@ const rules: KarabinerRules[] = [
       c: app("Visual Studio Code"),
       s: app("Slack"),
       f: app("Firefox"),
+      r: app("Arc")
     },
     // // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
+    },
+    e: {
+      d: { to: [{ key_code: "a" }] }
     },
     // // o = "Open" applications
     // o: {

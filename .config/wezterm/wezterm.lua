@@ -100,7 +100,7 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Monokai Pro (Gogh)'
+config.color_scheme = "Monokai Pro (Gogh)"
 
 config.tab_bar_at_bottom = true
 -- config.enable_tab_bar = false
@@ -108,10 +108,10 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.85
 
 config.window_padding = {
-	left = "20px",
-	right = "20px",
-	top = "20px",
-	bottom = "20px",
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
 }
 
 -- config.window_frame = {
