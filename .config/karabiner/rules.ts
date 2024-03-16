@@ -142,7 +142,7 @@ const rules: KarabinerRules[] = [
         }]
       }
     },
-    a: {
+    'open_bracket': {
       w: app("WezTerm"),
       b: app("Brave Browser"),
       g: app("GitHub Desktop"),
