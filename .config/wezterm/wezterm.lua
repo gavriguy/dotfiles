@@ -92,27 +92,27 @@ config.keys = {
 config.adjust_window_size_when_changing_font_size = false
 
 -- The filled in variant of the < symbol
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+-- local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 
 -- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+-- local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
 config.color_scheme = "Monokai Pro (Gogh)"
 
-config.tab_bar_at_bottom = true
--- config.enable_tab_bar = false
+-- config.tab_bar_at_bottom = true
+config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.85
 
-config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
-}
+-- config.window_padding = {
+-- 	left = 0,
+-- 	right = 0,
+-- 	top = 0,
+-- 	bottom = 0,
+-- }
 
 -- config.window_frame = {
 -- 	border_left_width = "0.5cell",
@@ -178,10 +178,10 @@ end)
 --
 
 -- The filled in variant of the < symbol
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+-- local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 
 -- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+-- local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`

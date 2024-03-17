@@ -142,7 +142,7 @@ const rules: KarabinerRules[] = [
         }]
       }
     },
-    'open_bracket': {
+    'equal_sign': {
       w: app("WezTerm"),
       b: app("Brave Browser"),
       g: app("GitHub Desktop"),
@@ -152,12 +152,12 @@ const rules: KarabinerRules[] = [
       r: app("Arc")
     },
     // // b = "B"rowse
-    b: {
-      t: open("https://twitter.com"),
-    },
-    e: {
-      d: { to: [{ key_code: "a" }] }
-    },
+    // b: {
+    //   t: open("https://twitter.com"),
+    // },
+    // e: {
+    //   d: { to: [{ key_code: "a" }] }
+    // },
     // // o = "Open" applications
     // o: {
     //   1: app("1Password"),
