@@ -33,4 +33,5 @@ return {
     opts = {},
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
+  { 'gleam-lang/gleam.vim' },
 }

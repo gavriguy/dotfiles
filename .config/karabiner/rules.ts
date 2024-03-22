@@ -1,61 +1,12 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open } from "./utils";
+import { createHyperSubLayers, app } from "./utils";
+
+const yabai = `/usr/local/bin/yabai`
 
 //  See https://gist.github.com/tshu-w/82af1843798edaab9062e44cb261d25a to try and use spacebar as the hyper key
 
 const rules: KarabinerRules[] = [
-  // {
-  //   description: "Use spacebar as Hyper key  (⌃⌥⇧⌘)",
-  //   manipulators: [
-  //     {
-  //       type: "basic",
-  //       from: {
-  //         key_code: "spacebar",
-  //       },
-  //       to_if_alone: [
-  //         {
-  //           key_code: "spacebar",
-  //         },
-  //       ],
-  //       to_if_held_down: [
-  //         {
-  //           key_code: "left_shift",
-  //           modifiers: ["left_command", "left_control", "left_option"],
-  //         },
-  //       ],
-
-  //       // "to_if_held_down": [
-  //       //   {
-  //       //     "set_variable": {
-  //       //       "name": "spacefn_mode",
-  //       //       "value": 1
-  //       //     }
-  //       //   }
-  //       // ],
-  //       // "to_after_key_up": [
-  //       //   {
-  //       //     "set_variable": {
-  //       //       "name": "spacefn_mode",
-  //       //       "value": 0
-  //       //     }
-  //       //   }
-  //       // ],
-  //       // "conditions": [
-  //       //   {
-  //       //     "type": "variable_if",
-  //       //     "name": "_spacefn_mode",
-  //       //     "value": 0
-  //       //   }sh
-  //       // ],
-  //       parameters: {
-  //         "basic.to_if_alone_timeout_milliseconds": 300,
-  //         "basic.to_if_held_down_threshold_milliseconds": 15
-  //       },
-  //     },
-  //   ],
-  // },
-
   // Define the Hyper key itself
 
   {
@@ -74,21 +25,6 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
     ],
   },
   {
@@ -102,7 +38,6 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "left_control",
-            // modifiers: ["left_command", "left_control", "left_option"],
           },
         ],
         to_if_alone: [
@@ -112,35 +47,55 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
     ],
   },
   ...createHyperSubLayers({
-    s: {
+    // yabai related keymaps
+    'hyphen': {
+      f: {
+        to: [{
+          shell_command: `${yabai} -m window --toggle float; ${yabai} -m window --toggle border`
+        }]
+      },
       h: {
         to: [{
-          shell_command: `/usr/local/bin/yabai --start-service`
+          shell_command: `${yabai} -m window --focus west`
         }]
       },
       j: {
         to: [{
-          shell_command: `/usr/local/bin/yabai --stop-service`
+          shell_command: `${yabai} -m window --focus south`
         }]
-      }
+      },
+      k: {
+        to: [{
+          shell_command: `${yabai} -m window --focus north`
+        }]
+      },
+      l: {
+        to: [{
+          shell_command: `${yabai} -m window --focus east`
+        }]
+      },
+      n: {
+        to: [{
+          shell_command: `${yabai} -m window --space prev; ${yabai} -m space --focus prev`
+        }]
+      },
+      p: {
+        to: [{
+          shell_command: `${yabai} -m window --space next; ${yabai} -m space --focus next`
+        }]
+      },
+      ...[1, 2, 3, 4, 5, 6, 7].reduce((acc, number) => {
+        acc[String(number)] = {
+
+          to: [{
+            shell_command: `${yabai} -m window --space ${number}; ${yabai} -m space --focus ${number}`
+          }]
+        }
+        return acc
+      }, {})
     },
     'equal_sign': {
       w: app("WezTerm"),
@@ -151,322 +106,7 @@ const rules: KarabinerRules[] = [
       f: app("Firefox"),
       r: app("Arc")
     },
-    // // b = "B"rowse
-    // b: {
-    //   t: open("https://twitter.com"),
-    // },
-    // e: {
-    //   d: { to: [{ key_code: "a" }] }
-    // },
-    // // o = "Open" applications
-    // o: {
-    //   1: app("1Password"),
-    //   g: app("Google Chrome"),
-    //   c: app("Notion Calendar"),
-    //   v: app("Visual Studio Code"),
-    //   d: app("Discord"),
-    //   s: app("Slack"),
-    //   e: app("Superhuman"),
-    //   n: app("Notion"),
-    //   t: app("Warp"),
-    //   // Open todo list managed via *H*ypersonic
-    //   h: open(
-    //     "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-    //   ),
-    //   z: app("zoom.us"),
-    //   // "M"essages
-    //   m: app("Texts"),
-    //   f: app("Finder"),
-    //   r: app("Texts"),
-    //   // "i"Message
-    //   i: app("Texts"),
-    //   p: app("Spotify"),
-    //   a: app("iA Presenter"),
-    //   w: open("https://web.whatsapp.com"),
-    //   l: open(
-    //     "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
-    //   ),
-    //   q: open("https://qrtr.ly/plan"),
-    // },
 
-    // // w = "Window" via rectangle.app
-    // w: {
-    //   semicolon: {
-    //     description: "Window: Hide",
-    //     to: [
-    //       {
-    //         key_code: "h",
-    //         modifiers: ["right_command"],
-    //       },
-    //     ],
-    //   },
-    //   y: {
-    //     description: "Window: First Third",
-    //     to: [
-    //       {
-    //         key_code: "left_arrow",
-    //         modifiers: ["right_option", "right_control"],
-    //       },
-    //     ],
-    //   },
-    //   k: {
-    //     description: "Window: Top Half",
-    //     to: [
-    //       {
-    //         key_code: "up_arrow",
-    //         modifiers: ["right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   j: {
-    //     description: "Window: Bottom Half",
-    //     to: [
-    //       {
-    //         key_code: "down_arrow",
-    //         modifiers: ["right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   o: {
-    //     description: "Window: Last Third",
-    //     to: [
-    //       {
-    //         key_code: "right_arrow",
-    //         modifiers: ["right_option", "right_control"],
-    //       },
-    //     ],
-    //   },
-    //   h: {
-    //     description: "Window: Left Half",
-    //     to: [
-    //       {
-    //         key_code: "left_arrow",
-    //         modifiers: ["right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   l: {
-    //     description: "Window: Right Half",
-    //     to: [
-    //       {
-    //         key_code: "right_arrow",
-    //         modifiers: ["right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   f: {
-    //     description: "Window: Full Screen",
-    //     to: [
-    //       {
-    //         key_code: "f",
-    //         modifiers: ["right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   u: {
-    //     description: "Window: Previous Tab",
-    //     to: [
-    //       {
-    //         key_code: "tab",
-    //         modifiers: ["right_control", "right_shift"],
-    //       },
-    //     ],
-    //   },
-    //   i: {
-    //     description: "Window: Next Tab",
-    //     to: [
-    //       {
-    //         key_code: "tab",
-    //         modifiers: ["right_control"],
-    //       },
-    //     ],
-    //   },
-    //   n: {
-    //     description: "Window: Next Window",
-    //     to: [
-    //       {
-    //         key_code: "grave_accent_and_tilde",
-    //         modifiers: ["right_command"],
-    //       },
-    //     ],
-    //   },
-    //   b: {
-    //     description: "Window: Back",
-    //     to: [
-    //       {
-    //         key_code: "open_bracket",
-    //         modifiers: ["right_command"],
-    //       },
-    //     ],
-    //   },
-    //   // Note: No literal connection. Both f and n are already taken.
-    //   m: {
-    //     description: "Window: Forward",
-    //     to: [
-    //       {
-    //         key_code: "close_bracket",
-    //         modifiers: ["right_command"],
-    //       },
-    //     ],
-    //   },
-    //   d: {
-    //     description: "Window: Next display",
-    //     to: [
-    //       {
-    //         key_code: "right_arrow",
-    //         modifiers: ["right_control", "right_option", "right_command"],
-    //       },
-    //     ],
-    //   },
-    // },
-
-    // // s = "System"
-    // s: {
-    //   u: {
-    //     to: [
-    //       {
-    //         key_code: "volume_increment",
-    //       },
-    //     ],
-    //   },
-    //   j: {
-    //     to: [
-    //       {
-    //         key_code: "volume_decrement",
-    //       },
-    //     ],
-    //   },
-    //   i: {
-    //     to: [
-    //       {
-    //         key_code: "display_brightness_increment",
-    //       },
-    //     ],
-    //   },
-    //   k: {
-    //     to: [
-    //       {
-    //         key_code: "display_brightness_decrement",
-    //       },
-    //     ],
-    //   },
-    //   l: {
-    //     to: [
-    //       {
-    //         key_code: "q",
-    //         modifiers: ["right_control", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   p: {
-    //     to: [
-    //       {
-    //         key_code: "play_or_pause",
-    //       },
-    //     ],
-    //   },
-    //   semicolon: {
-    //     to: [
-    //       {
-    //         key_code: "fastforward",
-    //       },
-    //     ],
-    //   },
-    //   e: {
-    //     to: [
-    //       {
-    //         // Emoji picker
-    //         key_code: "spacebar",
-    //         modifiers: ["right_control", "right_command"],
-    //       },
-    //     ],
-    //   },
-    //   // Turn on Elgato KeyLight
-    //   y: {
-    //     to: [
-    //       {
-    //         shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-    //       },
-    //     ],
-    //   },
-    //   h: {
-    //     to: [
-    //       {
-    //         shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-    //       },
-    //     ],
-    //   },
-    // },
-
-    // // v = "moVe" which isn't "m" because we want it to be on the left hand
-    // // so that hjkl work like they do in vim
-    // v: {
-    //   h: {
-    //     to: [{ key_code: "left_arrow" }],
-    //   },
-    //   j: {
-    //     to: [{ key_code: "down_arrow" }],
-    //   },
-    //   k: {
-    //     to: [{ key_code: "up_arrow" }],
-    //   },
-    //   l: {
-    //     to: [{ key_code: "right_arrow" }],
-    //   },
-    //   // Magicmove via homerow.app
-    //   m: {
-    //     to: [{ key_code: "f", modifiers: ["right_control"] }],
-    //   },
-    //   // Scroll mode via homerow.app
-    //   s: {
-    //     to: [{ key_code: "j", modifiers: ["right_control"] }],
-    //   },
-    //   d: {
-    //     to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-    //   },
-    //   u: {
-    //     to: [{ key_code: "page_down" }],
-    //   },
-    //   i: {
-    //     to: [{ key_code: "page_up" }],
-    //   },
-    // },
-
-    // // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    // c: {
-    //   p: {
-    //     to: [{ key_code: "play_or_pause" }],
-    //   },
-    //   n: {
-    //     to: [{ key_code: "fastforward" }],
-    //   },
-    //   b: {
-    //     to: [{ key_code: "rewind" }],
-    //   },
-    // },
-
-    // // r = "Raycast"
-    // r: {
-    //   l: open(
-    //     "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-    //   ),
-    //   e: open(
-    //     "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-    //   ),
-    //   c: open("raycast://extensions/raycast/system/open-camera"),
-    //   p: open("raycast://extensions/raycast/raycast/confetti"),
-    //   a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-    //   s: open("raycast://extensions/peduarte/silent-mention/index"),
-    //   h: open(
-    //     "raycast://extensions/raycast/clipboard-history/clipboard-history"
-    //   ),
-    //   1: open(
-    //     "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-    //   ),
-    //   2: open(
-    //     "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-    //   ),
-    // },
   }),
 ];
 

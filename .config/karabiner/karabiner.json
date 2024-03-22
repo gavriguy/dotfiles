@@ -52,13 +52,13 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer \"s\"",
+            "description": "Hyper Key sublayer \"hyphen\"",
             "manipulators": [
               {
-                "description": "Toggle Hyper sublayer s",
+                "description": "Toggle Hyper sublayer hyphen",
                 "type": "basic",
                 "from": {
-                  "key_code": "s",
+                  "key_code": "hyphen",
                   "modifiers": {
                     "mandatory": [
                       "left_command",
@@ -71,7 +71,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_s",
+                      "name": "hyper_sublayer_hyphen",
                       "value": 0
                     }
                   }
@@ -79,7 +79,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_s",
+                      "name": "hyper_sublayer_hyphen",
                       "value": 1
                     }
                   }
@@ -95,7 +95,191 @@
               {
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai --start-service"
+                    "shell_command": "/usr/local/bin/yabai -m window --space 1; /usr/local/bin/yabai -m space --focus 1"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 2; /usr/local/bin/yabai -m space --focus 2"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 3; /usr/local/bin/yabai -m space --focus 3"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 4; /usr/local/bin/yabai -m space --focus 4"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 5; /usr/local/bin/yabai -m space --focus 5"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 6; /usr/local/bin/yabai -m space --focus 6"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 7; /usr/local/bin/yabai -m space --focus 7"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "7",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --toggle float; /usr/local/bin/yabai -m window --toggle border"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus west"
                   }
                 ],
                 "type": "basic",
@@ -110,7 +294,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_s",
+                    "name": "hyper_sublayer_hyphen",
                     "value": 1
                   }
                 ]
@@ -118,7 +302,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai --stop-service"
+                    "shell_command": "/usr/local/bin/yabai -m window --focus south"
                   }
                 ],
                 "type": "basic",
@@ -133,7 +317,99 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_s",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus north"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus east"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space prev; /usr/local/bin/yabai -m space --focus prev"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space next; /usr/local/bin/yabai -m space --focus next"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_hyphen",
                     "value": 1
                   }
                 ]
@@ -176,7 +452,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_s",
+                    "name": "hyper_sublayer_hyphen",
                     "value": 0
                   }
                 ]
